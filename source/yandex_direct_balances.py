@@ -28,7 +28,7 @@ if __name__ == '__main__':
             balance_data = dh.get_balance_data(account_data)
             balances.update({client_name: list(balance_data.values())[0]})
 
-    email_body = 'Будь здоров\n\n'
+    email_body = data_loaded['email_body']
 
     for client in balances:
         email_body = email_body + f'{client}: {balances[client]} руб.\n '
