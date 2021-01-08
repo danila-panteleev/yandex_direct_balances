@@ -3,3 +3,4 @@ login: # логины клиента(ов)
 email_user: example@gmail.com # откуда отправить (только gmail, нужно разрешить доступ ненадежных приложений к аккаунту)
 email_password: # пароль от ящика-отправителя
 receiver: example@yahoo.com # кому отправить
+email_body: Будь здоров\n\n
