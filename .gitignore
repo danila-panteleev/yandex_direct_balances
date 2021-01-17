@@ -1,4 +1,6 @@
-config.yml
+source/config/credentials.json
+source/config/config.yml
+source/google_sheets_handler.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
