@@ -37,5 +37,5 @@ if __name__ == '__main__':
     #                  subject='Балансы клиентов Яндекс Директ',
     #                  body=email_body)
 
-    with open('balance_data.yml', 'w') as balances_dump_file:
+    with open('balance_data_yandex.yml', 'w') as balances_dump_file:
         yaml.safe_dump(balances, balances_dump_file)
