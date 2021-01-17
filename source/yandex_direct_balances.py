@@ -6,7 +6,7 @@ import email_handler as eh
 
 script_path = os.path.dirname(sys.argv[0])
 
-with open(os.path.join(script_path, r'config.yml'), 'r', encoding='utf-8') as stream:
+with open(os.path.join(script_path, r'config/config.yml'), 'r', encoding='utf-8') as stream:
     data_loaded = yaml.safe_load(stream)
 
 access_tokens = data_loaded['token']  # dict
