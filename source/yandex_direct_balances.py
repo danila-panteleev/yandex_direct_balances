@@ -30,11 +30,12 @@ if __name__ == '__main__':
 
     email_body = data_loaded['email_body']
 
-    for client in balances:
-        email_body = email_body + f'{client}: {balances[client]} руб.\n '
+    # for client in balances:
+    #     email_body = email_body + f'{client}: {balances[client]} руб.\n '
+    #
+    # eh.email_wrapper(email_user, email_password, email_receiver,
+    #                  subject='Балансы клиентов Яндекс Директ',
+    #                  body=email_body)
 
-    eh.email_wrapper(email_user, email_password, email_receiver,
-                     subject='Балансы клиентов Яндекс Директ',
-                     body=email_body)
-
-
+    with open('balance_data.yml', 'w') as balances_dump_file:
+        yaml.safe_dump(balances, balances_dump_file)
