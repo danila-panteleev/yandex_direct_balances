@@ -1,7 +1,7 @@
 import yaml
 import os
 import sys
-from yandex_direct_balances.source import data_handler as dh
+from source import data_handler as dh
 from datetime import date
 
 
