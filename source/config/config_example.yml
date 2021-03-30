@@ -1,3 +1,4 @@
+# настройки Яндекс Директ
 token: # Токены яндекс директ, как их получить: https://yandex.ru/dev/direct/doc/start/token.html
   - example.agency.login1: exampletokenaefwregvreGREWR213
   - exampleagency-login2: exampleTOKEN#@RFwdgfwea123231
@@ -8,7 +9,11 @@ login: # логины клиента(ов)
   - exampleagency-login2:
       - some client blah: efeawfaewf.this-is-login-too
       - and one more just for example: areyoufine
+# настройки для email хэндлера
 email_user: example@gmail.com # откуда отправить (только gmail, нужно разрешить доступ ненадежных приложений к аккаунту)
 email_password: # пароль от ящика-отправителя
 receiver: example@yahoo.com # кому отправить
 email_body: "Будь здоров\n\n"
+# настройки для google sheets
+spreadsheet: Таблица1
+sheet: Лист1
