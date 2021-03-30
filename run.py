@@ -1,5 +1,5 @@
-from yandex_direct_balances.source import (yandex_direct_balances,
-                                           google_sheets_handler)
+from source import (yandex_direct_balances,
+                    google_sheets_handler)
 import time
 import logging
 
