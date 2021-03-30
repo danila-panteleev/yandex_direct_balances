@@ -2,7 +2,7 @@ source/config/credentials.json
 source/config/config.yml
 source/google_sheets_handler.py
 source/balance_data_yandex.yml
-.log
+*.log
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

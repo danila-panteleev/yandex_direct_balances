@@ -4,7 +4,7 @@ import time
 import logging
 
 
-logging.basicConfig(filename='log', filemode='a', level=logging.DEBUG,
+logging.basicConfig(filename='.log', filemode='a', level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
