@@ -1,10 +1,12 @@
 import gspread
 import yaml
+import os
+import sys
 
 
 def main():
     gc = gspread.oauth()
-    with open('config.yml', mode='r', encoding='utf-8') as config_file:
+    with open(os.path.join(os.path.dirname(sys.argv[0]), r'source/config/config.yml'), mode='r', encoding='utf-8') as config_file:
         config = yaml.safe_load(config_file)
     spreadsheet = config['spreadsheet']
     sheet = config['sheet']
