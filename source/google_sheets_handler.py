@@ -1,30 +1,26 @@
 import gspread
-import yaml
-import os
-import sys
+from typing import AnyStr, Dict
 
 
-def main():
+def google_sheets_receiver(spreadsheet: AnyStr, sheet: AnyStr, balances: Dict[AnyStr, AnyStr]) -> None:
     gc = gspread.oauth()
-    with open(os.path.join(os.path.dirname(sys.argv[0]), r'source/config/config.yml'), mode='r', encoding='utf-8') as config_file:
-        config = yaml.safe_load(config_file)
-    spreadsheet = config['spreadsheet']
-    sheet = config['sheet']
     sh = gc.open(spreadsheet)
-
     worksheet = sh.worksheet(sheet)
-
-    with open('balance_data_yandex.yml', 'r') as stream:
-        balance_data = yaml.safe_load(stream)
+    balances = balances.copy()
+    last_update = balances.pop('Last update')
 
     # update values from "Яндекс Директ" column
-    for i in range(2, len(worksheet.get()) + 1):
-        client_name = worksheet.get(f'A{i}')[0][0]
-        balance = balance_data[client_name]
-        worksheet.update(f'B{i}', balance)
+    client_names = sorted(balances.keys())
+    for i in range(len(client_names)):
+        client_name = client_names[i]
+        balance = [balances[client_name]][0]
+        if worksheet.findall(client_name):
+            row_index = worksheet.findall(client_name)[0].row
+            worksheet.update(f'B{row_index}', balance)
+        else:
+            row = client_name, balance
+            worksheet.append_row(row)
 
-    worksheet.update('G2', balance_data['Last update'])
+    worksheet.update('G2', last_update)
 
-
-if __name__ == '__main__':
-    main()
+    return None
