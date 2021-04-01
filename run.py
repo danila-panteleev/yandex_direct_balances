@@ -35,8 +35,8 @@ sheet = config['sheet']
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-g', action='store_true')
-    parser.add_argument('-e', action='store_true')
+    parser.add_argument('-g', action='store_true')  # use google sheet
+    parser.add_argument('-e', action='store_true')  # use email receiver
     args = parser.parse_args()
 
     balances = yandex_direct_balances_with_data(tokens, logins)
