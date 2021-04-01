@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# coding=utf-8
 import gspread
 from typing import AnyStr, Dict
 

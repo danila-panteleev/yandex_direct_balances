@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
+# coding=utf-8
 import yaml
 from os import path
 from typing import Dict, AnyStr
-from datetime import date
 
 
 def load_yaml(script_path: AnyStr, file_path: AnyStr) -> Dict:

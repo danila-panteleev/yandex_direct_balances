@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# coding=utf-8
 from typing import AnyStr, List, Dict
 from source.data_handler import (get_account_data,
                                  get_balance_data)
