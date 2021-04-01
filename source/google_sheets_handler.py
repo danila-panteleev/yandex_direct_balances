@@ -5,7 +5,7 @@ from typing import AnyStr, Dict
 
 
 def google_sheets_receiver(spreadsheet: AnyStr, sheet: AnyStr, balances: Dict[AnyStr, AnyStr]) -> None:
-    gc = gspread.oauth()
+    gc = gspread.service_account()
     sh = gc.open(spreadsheet)
     worksheet = sh.worksheet(sheet)
     balances = balances.copy()
